@@ -5,7 +5,7 @@ class TeeController < ApplicationController
   end
 
   def create
-    req = Request.new({data:request.raw_post.force_encode('utf-8')})
+    req = Request.new({data:request.raw_post.force_encoding('utf-8')})
     if req.save
       render json: {success: :true}
     else
